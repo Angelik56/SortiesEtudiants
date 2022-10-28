@@ -1,11 +1,8 @@
 {% extends 'base.html.twig' %}
 
-
-
 {% block title %}{{ parent() }} | Connexion {% endblock %}
 
 {% block body %}
-
 <div class="container">
     <div class="row">
         <div class="col d-flex justify-content-center">
@@ -18,71 +15,43 @@
             <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
         </div>
     </div>
-
-
-
-            <div class="row">
-                <div class="col d-flex justify-content-center">
-
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
-
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% endif %}
-
-
-
-    <label for="inputEmail" class="form-label">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email"  autofocus>
-    <p></p>
-    <label for="inputPassword" class="form-label">Mot de passe</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
-<p></p>
-    <div class="checkbox mb-3">
-        <label>
-            <input type="checkbox" name="_remember_me"> Se souvenir de moi
-        </label>
-    </div>
-
-<div>
-    <button class="btn btn-warning btn-sm" type="submit">
-        Se connecter
-    </button>
-    <button class="btn btn-light btn-sm" type="button"><a href="{{ path('main_accueil') }}">Annuler</a>
-                </div>
-{#    <button class="btn btn-lg btn-primary" type="submit">#}
-
-
-
-</form>
-                    <p></p>
-                    <div>
-                        <a href="{{ path('app_forgot_password_request') }}" title="Mot de passe oublié?">mot de passe oublié?</a>
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <form method="post">
+                        {% if error %}
+                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
+                            {% if app.user %}
+                                <div class="mb-3">You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a></div>
+                            {% endif %}
+                                <label for="inputEmail" class="form-label">Email</label>
+                                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email"  autofocus>
+                                <p></p>
+                                <label for="inputPassword" class="form-label">Mot de passe</label>
+                                <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+                                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                                <p></p>
+                            <div class="checkbox mb-3">
+                                <label>
+                                    <input type="checkbox" name="_remember_me"> Se souvenir de moi
+                                </label>
+                            </div>
+                            <div>
+                                <button class="btn btn-warning btn-sm" type="submit">Se connecter</button>
+                                <button class="btn btn-light btn-sm" type="button"><a href="{{ path('main_accueil') }}">Annuler</a>
+                            </div>
+                        </form>
+                        <p></p>
+                        <div>
+                            <a href="{{ path('app_forgot_password_request') }}" title="Mot de passe oublié?">mot de passe oublié?</a>
+                        </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-
-
-
-
 {% endblock %}
 
 

@@ -133,7 +133,6 @@ class SortieController extends AbstractController
             $etatCreee = $etatRepository->findByLibelle('Créée');
         }
 
-
         $lieu = new Lieu();
         $lieuForm = $this->createForm(LieuType::class, $lieu);
         $lieuForm->handleRequest($request);
@@ -183,7 +182,6 @@ class SortieController extends AbstractController
         $this->addFlash(
             'success',
             'Tu es maintenant inscrit.'
-
         );
 
         $em->refresh($sortie);
@@ -217,26 +215,5 @@ class SortieController extends AbstractController
         ]);
 
     }
-
-
-//        if($form->isSubmitted() && $form->isValid()) {
-//            $sortie = $form->getData();
-//            $em->persist($sortie);
-//            $em->flush();
-//
-//            $this->addFlash(
-//                'success',
-//                'Les modifications ont bien été enregistrées.'
-//            );
-//            return $this->redirectToRoute('main_accueil');
-//        }
-//        return $this->render('sortie/modifierSortie.html.twig',[
-//            'form'=>$form->createView(),
-//            'sortie' =>$sortie,
-//        ]);
-//
-//
-//    }
-
 
 }

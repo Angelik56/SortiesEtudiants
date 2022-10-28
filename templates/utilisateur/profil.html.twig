@@ -18,20 +18,16 @@
         </div>
         <div class="row">
             <div class="col-12 d-flex justify-content-center">
-
                   {% if(app.user.avatar) %}
                         <div class="avatarpage"
                              style="background-image: url('{{ asset('img/' ~ app.user.avatar) }}');">
                         </div>
-
                     {% else %}
                         <div class="avatarpage"
                              style="background-image: url('{{ asset('img/emoticons.jpg') }}');">
                         </div>
                     {% endif %}
-
                 <p></p>
-
             </div>
         </div>
         <div class="row">
@@ -39,26 +35,18 @@
                 <p>Bonjour {{ app.user.pseudo }}, tu peux vérifier et/ou modifier ton profil ici</p>
             </div>
         </div>
-
         <div class="row">
             <div class="col d-flex justify-content-center">
-
                 <div class="card" style="width: 28rem;">
                     <div class="card-body">
-
-                        {#    <h2>Mon Profil</h2> #}
-
                         {{ form_start(form) }}
                         {{ form_widget(form) }}
                         <button class="btn btn-secondary btn-sm" type="button"><a href="{{ path('main_accueil') }}">Annuler</a></button>
                         <button class="btn btn-warning btn-sm" type="submit">Enregistrer</button>
-
                         {{ form_end(form) }}
                         <p></p>
                         <p>* Champ Obligatoire </p>
                         <p></p>
-
-
                     </div>
                 </div>
             </div>
