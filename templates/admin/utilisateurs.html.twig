@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
 <div class="container">
     <div class="text-center">
         <h2 class="section-heading text-uppercase">Espace de gestion des utilisateurs</h2>
@@ -9,12 +8,7 @@
         <img style="width: 150px; margin-bottom: 20px" src="{{ asset('img/utilisateurColor.png') }}" alt="utilisateur">
         <br>
     </div>
-{#    <a href="{{ path('admin_inscrire_utilisateur') }}"><button type="button" class="btn btn-warning ">Inscrire un nouvel tilisateur</button></a>#}
-{#    <br>#}
-
 </div>
-
-
     <div class="container">
         <div class="row">
             <div class="col">
@@ -35,7 +29,6 @@
                                 </thead>
                                 <tbody>
                                 {% for utilisateur in listeUtilisateurs %}
-
                                     <tr>
                                         <td>{{ utilisateur.pseudo }}</td>
                                         <td>{{ utilisateur.nom }}</td>
@@ -49,8 +42,6 @@
                                         {% endif %}
                                     </tr>
                                 {% endfor %}
-{#                                <a href="{{ path('admin_inscrire_utilisateur') }}"><button type="button" class="btn btn-warning ">Inscrire un nouvel tilisateur</button></a>#}
-
                                 </tbody>
                             </table>
 
@@ -58,8 +49,6 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
         <br>
         <a href="{{ path('admin_inscrire_utilisateur') }}"><button type="button" class="btn btn-warning btn-sm" >Inscrire un nouvel utilisateur</button></a>
@@ -67,10 +56,7 @@
         <a href="{{ path('admin_control') }}"><button type="button" class="btn btn-secondary btn-sm" >Retour</button></a>
         <br>
         <br>
-
-
     </div>
-
 {% endblock %}
 
 {% block title %}

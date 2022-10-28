@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
     <div class="container">
         <div class="row">
             <div class="col d-flex justify-content-center">
@@ -14,13 +13,10 @@
                 <h1 class="h3 mb-3 font-weight-normal">Inscrire un utilisateur</h1>
             </div>
         </div>
-
         <div class="row">
             <div class="col d-flex justify-content-center">
-
                 <div class="card" ">
                     <div class="card-body">
-
                         {{ form_start(form) }}
                         <table>
                             <tr>
@@ -28,55 +24,38 @@
                                 <td> &nbsp;&nbsp;&nbsp;</td>
                                 <td> {{ form_row(form.campus) }} </td>
                             </tr>
-
                             <tr>
                                 <td> {{ form_row(form.nom) }}</td>
                                 <td> </td>
                                 <td> {{ form_row(form.prenom) }} </td>
                             </tr>
-
                             <tr>
                                 <td> {{ form_row(form.telephone) }}</td>
                                 <td> </td>
                                 <td> {{ form_row(form.email) }}</td>
                             </tr>
-
                             <tr>
                                 <td> {{ form_row(form.avatar) }}</td>
                                 <td> </td>
                                 <td> {{ form_row(form.administrateur) }}  </td>
                             </tr>
-
                             <tr>
                                 <td> {{ form_row(form.plainPassword) }}</td>
                                 <td> </td>
-                                <td>  </td>
+                                <td> </td>
                             </tr>
                             <tr>
                                 <td><button type="submit" class="btn btn-warning btn-sm">Inscrire</button> &nbsp;&nbsp;&nbsp;
                                     <a href="{{ path('admin_liste_utilisateurs') }}"><button type="button" class="btn btn-secondary btn-sm">Retour</button></a></td>
                                 <td> </td>
-                                <td>  </td>
+                                <td> </td>
                             </tr>
-
-
                         </table>
-
-
-{#                        {{ form_widget(form) }}#}
-{#                        <button type="submit" class="btn btn-warning btn-sm">Inscrire</button>#}
-
-
-
                         {{ form_end(form) }}
-
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-
 {% endblock %}
 
 {% block title %}

@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
     <div class="container">
         <div class="text-center">
             <h2 class="section-heading text-uppercase">Espace de gestion des campus disponibles</h2>
@@ -26,13 +25,11 @@
                                 </thead>
                                 <tbody>
                                 {% for campus in listeCampus %}
-
                                     <tr>
                                         <td>{{ campus.nom }}</td>
                                         <td><a href="{{ path('admin_modifierCampus', {'id': campus.id}) }}" class="lienTableau">Modifier</a> - <a href="{{ path('admin_supprimerCampus', {'id': campus.id}) }}" class="lienTableau">Supprimer</a></td>
                                     </tr>
                                 {% endfor %}
-
                                 <tr>
                                     {{ form_start(nouveauCampusForm) }}
                                     <td>{{ form_widget(nouveauCampusForm) }}</td>
@@ -41,9 +38,7 @@
                                 </tr>
                                 </tbody>
                             </table>
-
                         </div>
-
                     </div>
                 </div>
                 <br>

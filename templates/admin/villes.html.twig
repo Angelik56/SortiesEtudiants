@@ -1,8 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
-
     <div class="container">
         <div class="text-center">
             <h2 class="section-heading text-uppercase">Espace de gestion des villes des sorties</h2>
@@ -28,14 +26,12 @@
                                 </thead>
                                 <tbody>
                                 {% for ville in listeVilles %}
-
                                     <tr>
                                         <td>{{ ville.nom }}</td>
                                         <td>{{ ville.codePostal }}</td>
                                         <td><a href="{{ path('admin_modifierVille', {'id': ville.id}) }}" class="lienTableau">Modifier</a> - <a href="{{ path('admin_deleteVille', {'id': ville.id}) }}"class="lienTableau">Supprimer</a></td>
                                     </tr>
                                 {% endfor %}
-
                                 <tr>
                                     {{ form_start(nouvelleVilleForm) }}
                                     <td>{{ form_row(nouvelleVilleForm.nom) }}</td>
@@ -45,7 +41,6 @@
                                 </tr>
                                 </tbody>
                             </table>
-
                         </div>
                     </div>
                 </div>
@@ -57,7 +52,6 @@
         <br>
         <br>
     </div>
-
 {% endblock %}
 
 {% block title %}
